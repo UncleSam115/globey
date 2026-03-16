@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Friendly Palette - Duolingo-inspired */
+  --primary: 154 60% 48%; /* Vibrant Green */
+  --primary-foreground: 0 0% 100%;
+  
+  --secondary: 198 88% 48%; /* Friendly Blue */
+  --secondary-foreground: 0 0% 100%;
+
+  --background: 0 0% 98%; /* Soft off-white */
+  --foreground: 222 47% 11%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 16% 47%;
+
+  --accent: 45 93% 47%; /* Yellow/Gold for highlights */
+  --accent-foreground: 222 47% 11%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+  --ring: 154 60% 48%;
+
+  --radius: 1rem; /* Very rounded */
+}
+
+.dark {
+  --primary: 154 60% 48%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 198 88% 48%;
+  --secondary-foreground: 0 0% 100%;
+
+  --background: 222 47% 8%;
+  --foreground: 210 40% 98%;
+
+  --card: 222 47% 11%;
+  --card-foreground: 210 40% 98%;
+
+  --popover: 222 47% 11%;
+  --popover-foreground: 210 40% 98%;
+
+  --muted: 217 33% 17%;
+  --muted-foreground: 215 20% 65%;
+
+  --accent: 45 93% 47%;
+  --accent-foreground: 210 40% 98%;
+
+  --destructive: 0 63% 51%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 217 33% 20%;
+  --input: 217 33% 20%;
+  --ring: 154 60% 48%;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Nunito', sans-serif;
+  }
+}
+
+/* Custom Animation Utilities */
+@keyframes press {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(2px); }
+  100% { transform: translateY(0); }
+}
+
+.animate-press {
+  animation: press 0.2s ease-in-out;
+}
+
+.glass-nav {
+  @apply bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border-t border-border;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
